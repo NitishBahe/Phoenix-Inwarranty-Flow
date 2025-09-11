@@ -7,7 +7,7 @@ on:
   schedule:
     - cron : 30 02 * * * # 8 am IST Every day
     - cron : 00 14 * * * # 730 pm IST Every day
-    - cron : 00 06 * * * # 1130 am IST Monday to Friday
+    - cron : 00 06 * * 1-5 # 1130 am IST Monday to Friday
 
 jobs:
   run-postman-tests:
