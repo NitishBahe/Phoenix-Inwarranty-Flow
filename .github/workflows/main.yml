@@ -18,27 +18,19 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v5.0.0
 
-        - name: Install Node js
+      - name: Install Node js and npm
+        uses: actions/setup-node@v5.0.0
+        with:
+          node-version: '22'
 
+      - name: Install Newman and HTML extra globally
+        run: |
+             npm install -g newman
+             npm install -g newman-reporter-htmlextra
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      - name: Run the postman Collection with newman
+        run: |
+             newman run 'Inwarranty-flow Collection Copy.postman_collection.json' \
+             -e QA.postman_environment.json \
+             -d testdata.csv \
+             -r cli,htmlextra
