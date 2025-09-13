@@ -34,3 +34,9 @@ jobs:
              -e QA.postman_environment.json \
              -d testdata.csv \
              -r cli,htmlextra
+
+      - name: Newman report
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: Newman report
+          path: newman/*.html
