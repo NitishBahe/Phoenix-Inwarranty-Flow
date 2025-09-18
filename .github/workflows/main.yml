@@ -59,7 +59,7 @@ jobs:
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Phoenix Inwarranty Flow Test Execution Notification
-          to: nitish.bahe@gmail.com
+          to: nitishbahe06@gmail.com
           from: ${{ secrets.EMAIL_USERNAME }}
           body: |
                 Hi,
